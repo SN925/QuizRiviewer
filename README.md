@@ -6,7 +6,7 @@ QuizReviewerは、過去に解いたクイズを登録することで、"早押�
 
 # DEMO
 <img src="https://github.com/SN925/Signboard_project/assets/134678318/aa34127b-e3d2-4b6a-8a92-baa9e2433cc9" width="48%" height="48%">
-<img src="https://github.com/SN925/Signboard_project/assets/134678318/8455434b-b27c-4fc7-96e9-72cb26f70503" width="48%" height="48%"><br>
+<img src="https://github.com/SN925/QuizRiviewer/assets/134678318/49bf922c-93d9-436b-b9c2-f7542fed3291" width="48%" height="48%"><br>
 問題文と答え、読み（正誤判定に用いる言葉）を登録することで、早押し形式での復習が可能です。
 
 # Requirement
