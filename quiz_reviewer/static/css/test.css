@@ -1,0 +1,31 @@
+h1 {
+    margin-top: 50px;
+	font-size:5em;
+	text-align:center;
+	line-height:0.95em;
+	font-weight:bold;
+	color: #FF6F00;
+	text-shadow:
+		0 0.01em 0 #999,
+		0 0.02em 0 #888,
+		0 0.03em 0 #777,
+		0 0.04em 0 #666,
+		0 0.05em 0 #555,
+		0 0.06em 0 #444,
+		0 0.08em 0 #000;
+}
+
+.test{
+    text-align: center;
+    padding: 15px 20px 12px;
+    font-size: 150%;
+    color:white;
+    font-weight:bold;
+    background-color: #f8b500;
+    text-decoration: none;
+    cursor: pointer;
+}
+.test:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}

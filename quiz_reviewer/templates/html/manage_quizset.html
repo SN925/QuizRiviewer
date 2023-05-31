@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizReviewer</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style_manage_quizset.css') }}">
+    <script>    
+    function clickEvent() {
+        var ret = confirm('本当に削除しますか？');
+        if(!ret){
+            return ret;
+        }      
+    }
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <nav>
+            <p class="nav_chr">QuizReviewer</p>
+        </nav>
+        <div class="subtitle_position">
+            <a class="subtitle">{{ quizsetname }}</a>
+        </div>
+        <div class="new_button_position">
+            <a class="new_button" href="/{{quizsetname}}/quizcreate" role="button">新規クイズ作成</a>
+        </div>
+        <table border="1" cellspacing="0">
+            {% for quiz in quizes %}
+                <tr>
+                    <th>
+                        <td width="20">{{ loop.index }}</td>
+                    </th>
+                    <th>
+                        <td class="quizset" width="625">{{ quiz.quiz_sentence }}</td>
+                    </th>
+                    <th>
+                        <td><a class="edit_button" href="/{{quiz.id}}/manage_quiz" role="button">　編集　</a></td>
+                    </th>
+                    <th>
+                        <td><a class="delete_button" href="/{{quiz.id}}/quiz_delete" onclick="return clickEvent()"role="button">　削除　</a></td>
+                    </th>
+                </tr>
+            {% endfor %}
+        </table>
+        </ul>
+        <form action="/managetop" method="GET"> <!-- 受け付ける先をpyの方で作る -->
+            <input type="submit" class="back_button" value="　戻る　">
+        </form>
+    </div>
+</body>
+</html>

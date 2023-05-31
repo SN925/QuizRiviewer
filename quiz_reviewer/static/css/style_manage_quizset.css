@@ -1,0 +1,117 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#wrap {
+    width:800px;
+    margin:0 auto;
+}
+
+nav {
+    top: 0;
+    border-width: 0 0 20px;
+    height: 50px;
+    background-color: #fffbf0;
+}
+
+.nav_chr {
+    margin-left: 25px;
+    font-size: 200%;
+    color: #777777;
+}
+
+.subtitle_position{
+    margin-left: 50px;
+    display: inline-block;
+}
+
+.subtitle{
+    font-size: 200%;
+    margin-left: 50px;
+    text-align:center;
+    font-weight:bold;
+    text-shadow: 0.02em 0.02em 0.02em rgba(0,0,0,1);
+}
+
+.new_button{
+    text-align: center;
+    padding: 100px;
+    padding: 9px 20px 7px;
+    font-size: 150%;
+    background-color: #f8b500;
+    color:white;
+    font-weight:bold;
+    text-decoration: none;
+    margin-left: 50px;
+}
+.new_button:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.new_button_position{
+    text-align: right;
+    margin-right: 50px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+table,table th,table td{
+    border-right: none !important;
+    border-left: none !important;
+}
+th{
+    height: 40px;
+}
+
+.quizset{
+    font-size: 115%;
+}
+
+.edit_button {
+    text-align: center;
+    font-size: 115%;
+    background-color: #5cb85c;
+    color:white;
+    font-weight:bold;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.edit_button:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+
+.delete_button {
+    text-align: center;
+    font-size: 115%;
+    background-color: #5bc0ce;
+    color:white;
+    font-weight:bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+.delete_button:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+
+.back_button {
+    text-align: center;
+    font-size: 115%;
+    background-color: blue;
+    color:white;
+    font-weight:bold;
+    text-decoration: none;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.back_button:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}

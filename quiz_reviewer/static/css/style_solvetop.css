@@ -1,0 +1,77 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#wrap {
+    width:800px;
+    margin:0 auto;
+}
+
+nav {
+    top: 0;
+    border-width: 0 0 20px;
+    height: 50px;
+    background-color: #fffbf0;
+}
+
+.nav_chr {
+    margin-left: 25px;
+    font-size: 200%;
+    color: #777777;
+}
+
+.subtitle_position{
+    margin-left: 50px;
+    display: inline-block;
+}
+
+.subtitle{
+    font-size: 200%;
+    margin-left: 50px;
+    text-align:center;
+    font-weight:bold;
+    text-shadow: 0.02em 0.02em 0.02em rgba(0,0,0,1);
+}
+
+table,table th,table td{
+    border-right: none !important;
+    border-left: none !important;
+}
+th{
+    height: 40px;
+}
+
+.quizset{
+    font-size: 115%;
+}
+
+.challange_button {
+    text-align: center;
+    font-size: 115%;
+    background-color: #5cb85c;
+    color:white;
+    font-weight:bold;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.challange_button:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.back_button {
+    text-align: center;
+    font-size: 115%;
+    background-color: blue;
+    color:white;
+    font-weight:bold;
+    text-decoration: none;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.back_button:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}

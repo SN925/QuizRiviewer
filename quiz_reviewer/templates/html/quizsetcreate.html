@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style_quizsetcreate.css') }}">
+</head>
+<body>
+    <div id="wrap">
+        <nav>
+            <p class="nav_chr">QuizReviewer</p>
+        </nav>
+        <div class="subtitle_position">
+            <a class="subtitle">新規クイズセット作成</a>
+        </div>  
+    <form action="/quizsetcreate" method="POST" name="FORM1"> <!-- 受け付ける先をpyの方で作る -->
+        <div class="item_position">
+            <label for="quizset" class="item">　クイズリスト名　</label>
+        </div>
+        <input type="text" class="txt" name="name">
+        <input type="hidden" name="KEYWORD" value="新規登録">
+        <div class="register_position">
+            <a class="register" href="javascript:FORM1.submit()">　新規登録　</a>
+        </div>
+        <p>{{ error }}</p>
+    </form>
+    <form action="/managetop" method="GET"> <!-- 受け付ける先をpyの方で作る -->
+        <input type="submit" class="back_button" value="　戻る　">
+    </form>
+</body>
+</html>

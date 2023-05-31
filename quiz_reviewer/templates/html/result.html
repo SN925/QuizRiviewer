@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizReviewer</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style_result.css') }}">
+</head>
+<body>
+    <div id="wrap">
+        <nav>
+            <p class="nav_chr">QuizReviewer</p>
+        </nav>
+        <h1>結果発表</h1>
+        <div class="correct">
+            <a>{{ quiz_sum }}問中{{ correct }}問正解</a>
+        </div>
+        <form action="/result" name="FORM1" method="GET">
+            <input type="hidden" name="KEYWORD" value="戻る">
+        </form>
+        <div class="back_position">
+            <a class="back" href="javascript:FORM1.submit()">戻る</a>
+        </div>
+    </div>
+</body>
+</html>

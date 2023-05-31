@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizReviewer</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style_manage_quiz.css') }}">
+</head>
+<body>
+    <div id="wrap">
+        <nav>
+            <p class="nav_chr">QuizReviewer</p>
+        </nav>
+        {% for quiz in quizes %}
+            <form method="POST" name="FORM1">
+                <div class="put">
+                    <div class="item_position">
+                        <a class="item">　問題　</a>
+                    </div>
+                    <textarea class="txt_quiz" name="quiz_sentence" value={{quiz.quiz_sentence}}>{{quiz.quiz_sentence}}</textarea>
+                </div>
+                <div class="put">
+                    <div class="item_position">
+                        <a class="item">　答え　</a>
+                    </div>
+                    <input type="text" class="txt" name="answer" value={{quiz.answer}}>
+                </div>
+                <div class="put">
+                    <div class="item_position">
+                        <a class="item">　読み　</a>
+                    </div>
+                    <input type="text" class="txt" name="reading" value={{quiz.reading}}>
+                </div>
+                <input type="hidden" name="KEYWORD" value="登録">
+            </form>
+                <div class="register_position">
+                    <a class="register" href="javascript:FORM1.submit()">　登録　</a>
+                </div>
+            <form action="/{{quiz.quizsetname}}/manage_quizset" method="GET"> <!-- 受け付ける先をpyの方で作る -->
+                <input type="submit" class="back_button" value="　戻る　">
+            </form>
+            <a>{{ error }}</a>
+        {% endfor %}
+    </div>
+</body>
+</html>

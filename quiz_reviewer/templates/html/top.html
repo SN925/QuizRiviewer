@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizReviewer</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style_top.css') }}">
+</head>
+<body>
+    <div id="wrap">
+        <nav>
+            <p class="nav_chr">QuizReviewer</p>
+        </nav>
+        <div class="logo">
+            <h1>QuizReviewer</h1>
+            <br>
+            <h2>QuizReviewerは、過去に解いたクイズを登録することで</h2>
+            <h2>早押しクイズ形式での復習ができるサイトです。</h2>
+            <ul>
+                <li>
+                    <a href="/solvetop" role="button" class="solve">クイズを解く</a>
+                </li>
+                <li>
+                    <a href="/managetop" role="button" class="manage">クイズの管理</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

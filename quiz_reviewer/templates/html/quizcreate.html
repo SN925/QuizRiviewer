@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style_quizcreate.css') }}">
+</head>
+<body>
+    <div id="wrap">
+        <nav>
+            <p class="nav_chr">QuizReviewer</p>
+        </nav> 
+        <form action="/{{quizsetname}}/quizcreate" method="POST" name="FORM1"> <!-- 受け付ける先をpyの方で作る -->
+            <div class="put">
+                <div class="item_position">
+                    <label for="quiz_sentence" class="item">　問題　</label>
+                    <a>※問題文を入力してください。</a>
+                </div>
+                <textarea class="txt_quiz" name="quiz_sentence"></textarea>
+            </div>
+            <div class="put">
+                <div class="item_position">
+                    <label for="answer" class="item">　答え　</label>
+                    <a>※クイズを答えた後に解答として表示される文字を入力してください。</a>
+                </div>
+                <input type="text" class="txt" name="answer">
+            </div>
+            <div class="put">
+                <div class="item_position">
+                    <label for="reading" class="item">　読み　</label>
+                    <a>※クイズを解く際は「読み」と一致しているかで正誤が判定されます。</a>
+                </div>
+                <input type="text" class="txt" name="reading">
+            </div>
+            <input type="hidden" name="KEYWORD" value="新規登録">
+        </form>
+            <div class="register_position">
+                <a class="register" href="javascript:FORM1.submit()">　新規登録　</a>
+            </div>
+        <form action="/{{quizsetname}}/manage_quizset" method="GET"> <!-- 受け付ける先をpyの方で作る -->
+            <input type="submit" class="back_button" value="　戻る　">
+        </form>
+        <p>{{ error }}</p>
+    </div>
+</body>
+</html>

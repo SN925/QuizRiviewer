@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizReviewer</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style_solving.css') }}">
+</head>
+<script>
+var text = "{{ quiz.quiz_sentence }}"; // 表示するテキスト
+var currentChar = 0; // 現在表示されている文字のインデックス
+var intervalId = null; // 文字を表示するsetInterval()関数のID
+var paused = false; // 一時停止フラグ
+
+function displayChar() {
+    //問題文を表示する関数
+    document.getElementById("text").innerHTML += text[currentChar];
+    currentChar++;
+
+    if (currentChar >= text.length) {
+        clearInterval(intervalId);
+    }
+}
+
+
+function togglePause() {
+    //早押しボタンを押した時に文字の表示を止める関数
+    paused = !paused;
+    if (paused) {
+        clearInterval(intervalId);
+    } 
+}
+
+intervalId = setInterval(displayChar, 100); // 最初にsetInterval()関数を呼び出し、100ミリ秒ごとに文字を表示するようにする
+</script>
+<body>
+    <div id="wrap">
+        <nav>
+            <p class="nav_chr">QuizReviewer</p>
+        </nav>
+        <img src="button.jpeg">
+        {% if rw != "正解" and rw != "不正解"%}
+            <div class="sentence_potision">
+                <a class="sentence" id="text"></a>
+            </div>
+        {% else %}
+            <div class="sentence_potision">
+                <a class="sentence">{{ quiz.quiz_sentence }}</a>
+            </div>
+        {% endif %}
+
+        {% if rw != "正解" and rw != "不正解"%}
+            <form action="/{{quiz.quizsetname}}/solving" method="POST" name="FORM1"> <!-- 受け付ける先をpyの方で作る -->
+                <input type="text" class="txt" name="reading">
+                <input type="hidden" name="KEYWORD" value="回答">
+                <div class="register_position">
+                    <a class="register" href="javascript:FORM1.submit()">　回答　</a>
+                </div>
+            </form>
+            <div class="quick_button_position">
+                <button class="quick_button" id="pauseButton" onclick="togglePause()">　早押しボタン　</button>
+            </div>
+        {% endif %}
+
+        {% if rw == "正解" %}
+            <div class="r_position">
+                <a class="r">{{ rw }}</a>
+            </div>
+        {% elif rw == "不正解" %}
+            <div class="w_position">
+                <a class="w">{{ rw }}</a>
+            </div>
+        {% endif %}
+
+        {% if rw == "正解" or rw == "不正解"%}
+            <table cellspacing="0">
+                <tr>
+                    <td><a class="correct">入力した答え：{{ ans }}</td>
+                    {% if end == False %}
+                        <form action="/{{quiz.quizsetname}}/solving" method="GET">
+                            <td rowspan="2" class="correct"><input type="submit" class="next" value="次へ"></td>
+                        </form>
+                    {% else %}
+                        <form action="/result" method="POST"> 
+                            <td rowspan="2" class="correct"><button type="submit" class="next" name="quizsetname" value="{{quiz.quizsetname}}">次へ</td>
+                        </form>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td><a class="correct">　問題の解答：{{ quiz.answer }}</a></td>
+                </tr>
+            </table>
+        {% endif %}
+
+        <form action="/solvetop" method="GET"> <!-- 受け付ける先をpyの方で作る -->
+            <div class="back_button_potision">
+                <input type="submit" class="back_button" value="　クイズセット一覧に戻る　">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
