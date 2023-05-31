@@ -1,13 +1,12 @@
 from flask import Flask
 from flask import render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
-import pytz 
-import time
 
-app = Flask(__name__)  #アプリケーションのインスタンス化
+#app = Flask(__name__)  #アプリケーションのインスタンス化
+app = Flask(__name__, static_folder='./static')
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///quiz.db"  #データベース作成のパス
 db = SQLAlchemy(app) #これでデータベース生成
+
 
 class Quizset(db.Model):
     quizsetname = db.Column(db.String)

@@ -62,7 +62,7 @@ nav {
 }
 
 .quick_button_position{
-    margin-top: 25px;
+    margin-top: 50px;
     text-align: center;
 }
 
@@ -72,7 +72,8 @@ nav {
     font-size: 150%;
     color:white;
     font-weight:bold;
-    background-color: #5cb85c;
+    border-width: 5px;
+    background-color: red;
     text-decoration: none;
     margin-left: 50px;
 }
