@@ -32,7 +32,7 @@ function togglePause() {
     } 
 }
 
-intervalId = setInterval(displayChar, 100); // 最初にsetInterval()関数を呼び出し、100ミリ秒ごとに文字を表示するようにする
+intervalId = setInterval(displayChar, 100);
 </script>
 <body>
     <div id="wrap">
@@ -50,7 +50,7 @@ intervalId = setInterval(displayChar, 100); // 最初にsetInterval()関数を�
         {% endif %}
 
         {% if rw != "正解" and rw != "不正解"%}
-            <form action="/{{quiz.quizsetname}}/solving" method="POST" name="FORM1"> <!-- 受け付ける先をpyの方で作る -->
+            <form action="/{{quiz.quizsetname}}/solving" method="POST" name="FORM1">
                 <input type="text" class="txt" name="reading">
                 <input type="hidden" name="KEYWORD" value="回答">
                 <div class="register_position">
@@ -92,7 +92,7 @@ intervalId = setInterval(displayChar, 100); // 最初にsetInterval()関数を�
             </table>
         {% endif %}
 
-        <form action="/solvetop" method="GET"> <!-- 受け付ける先をpyの方で作る -->
+        <form action="/solvetop" method="GET"> 
             <div class="back_button_potision">
                 <input type="submit" class="back_button" value="　クイズセット一覧に戻る　">
             </div>

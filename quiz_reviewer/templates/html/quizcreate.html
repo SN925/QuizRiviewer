@@ -12,7 +12,7 @@
         <nav>
             <p class="nav_chr">QuizReviewer</p>
         </nav> 
-        <form action="/{{quizsetname}}/quizcreate" method="POST" name="FORM1"> <!-- 受け付ける先をpyの方で作る -->
+        <form action="/{{quizsetname}}/quizcreate" method="POST" name="FORM1"> 
             <div class="put">
                 <div class="item_position">
                     <label for="quiz_sentence" class="item">　問題　</label>
@@ -39,7 +39,7 @@
             <div class="register_position">
                 <a class="register" href="javascript:FORM1.submit()">　新規登録　</a>
             </div>
-        <form action="/{{quizsetname}}/manage_quizset" method="GET"> <!-- 受け付ける先をpyの方で作る -->
+        <form action="/{{quizsetname}}/manage_quizset" method="GET">
             <input type="submit" class="back_button" value="　戻る　">
         </form>
         <p>{{ error }}</p>

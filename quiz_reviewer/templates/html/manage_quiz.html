@@ -17,18 +17,21 @@
                 <div class="put">
                     <div class="item_position">
                         <a class="item">　問題　</a>
+                        <a>※問題文を入力してください。</a>
                     </div>
                     <textarea class="txt_quiz" name="quiz_sentence" value={{quiz.quiz_sentence}}>{{quiz.quiz_sentence}}</textarea>
                 </div>
                 <div class="put">
                     <div class="item_position">
                         <a class="item">　答え　</a>
+                        <a>※クイズを答えた後に解答として表示される文字を入力してください。</a>
                     </div>
                     <input type="text" class="txt" name="answer" value={{quiz.answer}}>
                 </div>
                 <div class="put">
                     <div class="item_position">
                         <a class="item">　読み　</a>
+                        <a>※クイズを解く際は「読み」と一致しているかで正誤が判定されます。</a>
                     </div>
                     <input type="text" class="txt" name="reading" value={{quiz.reading}}>
                 </div>
@@ -37,7 +40,7 @@
                 <div class="register_position">
                     <a class="register" href="javascript:FORM1.submit()">　登録　</a>
                 </div>
-            <form action="/{{quiz.quizsetname}}/manage_quizset" method="GET"> <!-- 受け付ける先をpyの方で作る -->
+            <form action="/{{quiz.quizsetname}}/manage_quizset" method="GET"> 
                 <input type="submit" class="back_button" value="　戻る　">
             </form>
             <a>{{ error }}</a>
